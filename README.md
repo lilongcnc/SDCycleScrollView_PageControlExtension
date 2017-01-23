@@ -28,9 +28,7 @@ SDCycleScrollView基础上的pageControl 扩展和续写.
 ###交流
 ![](http://www.lilongcnc.cc/lauren_picture/bottomFace.jpeg)
 
-```
 希望能和大家交流技术
-
 [我的博客地址](http://www.lilongcnc.cc/)
 
 [我的简书地址](http://www.jianshu.com/u/842cccac8576)
