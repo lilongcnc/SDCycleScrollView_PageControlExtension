@@ -25,7 +25,7 @@ SDCycleScrollView基础上的pageControl 扩展和续写.
 为了更便于直观理解,我没有把这两个**魔法数字替**换成`self.dotSize.width`, `self.currentDotSize.width`和`self.spacingBetweenDots`. 大家后期封装可以自行替换.
 
 ```
-![](http://www.lilongcnc.cc/lauren_picture/bottomFace.png)
+![](http://www.lilongcnc.cc/lauren_picture/bottomFace.jpeg)
 
 希望能和大家交流技术
 
