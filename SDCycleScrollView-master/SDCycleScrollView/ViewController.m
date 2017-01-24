@@ -125,34 +125,7 @@
      
      */
     
-    
-// >>>>>>>>>>>>>>>>>>>>>>>>> demo轮播图3 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    
-    // 网络加载 --- 创建自定义图片的pageControlDot的图片轮播器
-//    SDCycleScrollView *cycleScrollView3 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 500, w, 180) delegate:self placeholderImage:[UIImage imageNamed:@"placeholder"]];
-//    cycleScrollView3.currentPageDotImage = [UIImage imageNamed:@"pageControlCurrentDot"];
-//    cycleScrollView3.pageDotImage = [UIImage imageNamed:@"pageControlDot"];
-//    cycleScrollView3.imageURLStringsGroup = imagesURLStrings;
-//    
-//    [demoContainerView addSubview:cycleScrollView3];
-    
-// >>>>>>>>>>>>>>>>>>>>>>>>> demo轮播图4 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    
-    // 网络加载 --- 创建只上下滚动展示文字的轮播器
-    // 由于模拟器的渲染问题，如果发现轮播时有一条线不必处理，模拟器放大到100%或者真机调试是不会出现那条线的
-//    SDCycleScrollView *cycleScrollView4 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 750, w, 40) delegate:self placeholderImage:nil];
-//    cycleScrollView4.scrollDirection = UICollectionViewScrollDirectionVertical;
-//    cycleScrollView4.onlyDisplayText = YES;
-//    
-//    NSMutableArray *titlesArray = [NSMutableArray new];
-//    [titlesArray addObject:@"纯文字上下滚动轮播"];
-//    [titlesArray addObject:@"纯文字上下滚动轮播 -- demo轮播图4"];
-//    [titlesArray addObjectsFromArray:titles];
-//    cycleScrollView4.titlesGroup = [titlesArray copy];
-//    
-//    [demoContainerView addSubview:cycleScrollView4];
-    
-}
+ }
 
 - (void)viewWillAppear:(BOOL)animated
 {

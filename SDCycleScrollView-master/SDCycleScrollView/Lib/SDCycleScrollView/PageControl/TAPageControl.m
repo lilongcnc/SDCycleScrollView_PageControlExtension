@@ -138,13 +138,7 @@ static CGSize const kDefaultDotSize = {8, 8};
 //- (CGSize)sizeForNumberOfPages:(NSInteger)pageCount withIndex:(NSInteger)index
 - (CGSize)sizeForNumberOfPages:(NSInteger)pageCount
 {
-    
-    CGSize size = CGSizeMake((self.dotSize.width + self.spacingBetweenDots) * pageCount - self.spacingBetweenDots , self.dotSize.height);
-//    NSLog(@"self.dotSize.width->%f  self.spacingBetweenDots->%zd -> %zd ->%@",self.dotSize.width,self.spacingBetweenDots,pageCount,NSStringFromCGSize(size));
-//    if (pageCount == 0) {
-//        return size;
-//    }
-    return size;
+    return  CGSizeMake((self.dotSize.width + self.spacingBetweenDots) * pageCount - self.spacingBetweenDots , self.dotSize.height);;
 }
 
 
@@ -207,32 +201,17 @@ static CGSize const kDefaultDotSize = {8, 8};
 {
     // Dots are always centered within view
     NSLog(@"index--->%zd",index);
-    
-//    if (index == self.dots.count-1) {
-//        //末尾
-//        
-//        return;
-//    }
-    
-    
     if (index == 0) {
         dot.frame = CGRectMake(0, 0, self.currentDotSize.width, self.currentDotSize.height);
-        NSLog(@"dot.frame--->%@",NSStringFromCGRect(dot.frame));
-        return;
+//        NSLog(@"dot.frame--->%@",NSStringFromCGRect(dot.frame));
     }else{
         
         CGFloat x = (self.currentDotSize.width + self.spacingBetweenDots) + (self.dotSize.width + self.spacingBetweenDots) * (index-1);
         CGFloat y = (CGRectGetHeight(self.frame) - self.dotSize.height) / 2;
         dot.frame = CGRectMake(x, y, self.dotSize.width, self.dotSize.height);
-        NSLog(@"dot.frame--->%@",NSStringFromCGRect(dot.frame));
+//        NSLog(@"dot.frame--->%@",NSStringFromCGRect(dot.frame));
         
     }
-//
-//    CGFloat x = (self.dotSize.width + self.spacingBetweenDots) * index + ( (CGRectGetWidth(self.frame) - [self sizeForNumberOfPages:self.numberOfPages].width) / 2);
-//    CGFloat y = (CGRectGetHeight(self.frame) - self.dotSize.height) / 2;
-
-    //    NSLog(@"dot.frame--->%@",NSStringFromCGRect(dot.frame));
-    
 }
 
 
@@ -261,10 +240,6 @@ static CGSize const kDefaultDotSize = {8, 8};
             dotView = [[UIImageView alloc] initWithImage:self.dotImage];
             dotView.frame = CGRectMake(0, 0, self.dotSize.width, self.dotSize.height);
         }
-        
-//        NSLog(@"++++++++++++++++ %zd +++++++++++++",previousIndex);
-//        NSLog(@"++++++++++++++++ %f +++++++++++++",self.dotSize.width);
-        
     }
     
     if (dotView) {
@@ -293,10 +268,6 @@ static CGSize const kDefaultDotSize = {8, 8};
             NSLog(@"Custom view : %@ must implement an 'changeActivityState' method or you can subclass %@ to help you.", self.dotViewClass, [TAAbstractDotView class]);
         }
     } else if (self.dotImage && self.currentDotImage) {
-//        UIImageView *dotView = (UIImageView *)[self.dots objectAtIndex:index];
-//        dotView.image = (active) ? self.currentDotImage : self.dotImage;
-//        return;
-
         NSLog(@"------------------------------------> %zd <---------------------------------------",index);
 
         for (int i = 0; i < self.numberOfPages; i++) {
@@ -317,7 +288,6 @@ static CGSize const kDefaultDotSize = {8, 8};
             }else if ( index != self.numberOfPages-1 && i > index){
                 lengthMargin2 = (5+5)*(i-1);
             }else{
-//                lengthMargin2 = (5+5)*(i-1<0?0:i-1);
                 lengthMargin2 = (5+5)*i;
             }
             
@@ -339,58 +309,7 @@ static CGSize const kDefaultDotSize = {8, 8};
                     tempDotView.sd_width = 5;
                 }];
             }
-            
-            
-            
         }
-        
-        
-        
-//        if (previousIndex != index) {
-//            NSLog(@"------------------------------------> %zd <---------------------------------------",index);
-        
-            
-            
-            
-            
-//            if (index == 1) {
-//                //上一次的view
-//                UIImageView *tempDotView = (UIImageView *)[self.dots objectAtIndex:0];
-//                tempDotView.sd_x = 0;
-//                [UIView animateWithDuration:0.3f animations:^{
-//                    tempDotView.sd_width = 5;
-//                }];
-//            }else{
-//                
-////                previousDotView.sd_x = previousDotView.sd_x+7;
-//                [UIView animateWithDuration:0.3f animations:^{
-//                    previousDotView.sd_width = 5;
-//                }];
-//            }
-//            
-//            
-//            
-//            //本次的view
-//            UIImageView *dotView = (UIImageView *)[self.dots objectAtIndex:index];
-//            dotView.image = (active) ? self.currentDotImage : self.dotImage;
-//            
-//            
-//            if (index == 0) {
-//                dotView.sd_x = 0;
-//            }else{
-//                dotView.sd_x = dotView.sd_x - 7;
-//            }
-//            
-//            [UIView animateWithDuration:0.3f animations:^{
-//                dotView.sd_width = 12;
-//            }];
-//        
-//            
-//            
-//            //记录中间变量
-//            previousDotView = dotView;
-//            previousIndex = index;
-//        }
     }
 }
 
