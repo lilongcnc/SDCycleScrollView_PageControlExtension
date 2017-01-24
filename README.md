@@ -21,7 +21,7 @@ SDCycleScrollView基础上的pageControl 扩展和续写.
 
 另外,轮播器的pageCpntrol样式一定要设置成:
   
-  cycleScrollView2.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
+  `cycleScrollView2.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;`
 
 
 ###关于计算pageControl
