@@ -40,14 +40,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:0.99];
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"005.jpg"]];
-    backgroundView.frame = self.view.bounds;
-    [self.view addSubview:backgroundView];
-    
-    UIScrollView *demoContainerView = [[UIScrollView alloc] initWithFrame:self.view.frame];
-    demoContainerView.contentSize = CGSizeMake(self.view.frame.size.width, 1200);
-    [self.view addSubview:demoContainerView];
+
     
     self.title = @"轮播Demo";
 
@@ -76,19 +69,6 @@
     CGFloat w = self.view.bounds.size.width;
     
     
-
-// >>>>>>>>>>>>>>>>>>>>>>>>> demo轮播图1 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    
-    // 本地加载 --- 创建不带标题的图片轮播器
-//    SDCycleScrollView *cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 64, w, 180) shouldInfiniteLoop:YES imageNamesGroup:imageNames];
-//    cycleScrollView.delegate = self;
-//    cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
-//    [demoContainerView addSubview:cycleScrollView];
-//    cycleScrollView.scrollDirection = UICollectionViewScrollDirectionVertical;
-    //         --- 轮播时间间隔，默认1.0秒，可自定义
-    //cycleScrollView.autoScrollTimeInterval = 4.0;
-    
-    
 // >>>>>>>>>>>>>>>>>>>>>>>>> demo轮播图2 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     
     // 网络加载 --- 创建带标题的图片轮播器
@@ -99,22 +79,13 @@
     cycleScrollView2.currentPageDotColor = [UIColor greenColor]; // 自定义分页控件小圆标颜色
     cycleScrollView2.pageControlBottomOffset = 30;
     cycleScrollView2.pageControlDotSize = CGSizeMake(5, 5);
-    cycleScrollView2.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
-    [demoContainerView addSubview:cycleScrollView2];
+    cycleScrollView2.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated; //一定要设置成这个模式
+    [self.view addSubview:cycleScrollView2];
     
     //         --- 模拟加载延迟
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         cycleScrollView2.imageURLStringsGroup = imagesURLStrings;
     });
-    
-    
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 100, 100, 6)];
-    imageView.image = [UIImage imageNamed:@"22"];
-    imageView.backgroundColor = [UIColor redColor];
-    
-    [self.view addSubview:imageView];
-    
-    
     
     /*
      block监听点击方式

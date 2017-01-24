@@ -43,12 +43,7 @@ static NSInteger const kDefaultSpacingBetweenDots = 8;
 static CGSize const kDefaultDotSize = {8, 8};
 
 
-@interface TAPageControl(){
-    UIImageView *previousDotView;
-    NSInteger previousIndex;
-}
-
-
+@interface TAPageControl()
 
 /**
  *  Array of dot views for reusability and touch events.
