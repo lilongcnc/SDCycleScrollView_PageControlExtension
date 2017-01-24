@@ -19,6 +19,11 @@ SDCycleScrollView基础上的pageControl 扩展和续写.
 - i: 代表当前index 情况下,轮播图中所有pageControl的位置x 值
 你可以使用代码比较工具,查看一下我改动了哪些代码. 主要是`TAPageControl.m`, `SDCycleScrollView.m`, `ViewController.m`三个文件中.
 
+另外,轮播器的pageCpntrol样式一定要设置成:
+  
+  cycleScrollView2.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
+
+
 ###关于计算pageControl
 关于计算pageControl的 x 坐标值,我们可以分为两部分, 一步是`12+5(长图片的宽度+间距)`何时出现,  还有就是`5+5(短图宽度+间距)`.
 
